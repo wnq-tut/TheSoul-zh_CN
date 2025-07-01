@@ -219,50 +219,50 @@
     <h1>The Soul</h1>
     <div class="container">
       <div class="input-section">
-        <h2>Settings</h2>
-        <label for="seed">Seed:</label>
+        <h2>设置</h2>
+        <label for="seed">种子:</label>
         <input type="text" id="seed" maxlength="8" pattern="[A-Z1-9]{1,8}" required>
         <br>
-        <label for="ante">Max Ante:</label>
+        <label for="ante">盲注数:</label>
         <input type="number" id="ante" min="1" max="999" value="8" required>
         <br>
-        <label for="cardsPerAnte">Cards per Ante:</label>
+        <label for="cardsPerAnte">每个盲注分析的卡牌数:</label>
         <input type="text" id="cardsPerAnte" value = "15,50,50,50,50,50,50,50" required>
         <br>
-        <label for="deck">Deck:</label>
+        <label for="deck">牌组:</label>
         <select id="deck" required>
-          <option value="Red Deck">Red Deck</option>
-          <option value="Blue Deck">Blue Deck</option>
-          <option value="Yellow Deck">Yellow Deck</option>
-          <option value="Green Deck">Green Deck</option>
-          <option value="Black Deck">Black Deck</option>
-          <option value="Magic Deck">Magic Deck</option>
-          <option value="Nebula Deck">Nebula Deck</option>
-          <option value="Ghost Deck">Ghost Deck</option>
-          <option value="Abandoned Deck">Abandoned Deck</option>
-          <option value="Checkered Deck">Checkered Deck</option>
-          <option value="Zodiac Deck">Zodiac Deck</option>
-          <option value="Painted Deck">Painted Deck</option>
-          <option value="Anaglyph Deck">Anaglyph Deck</option>
-          <option value="Plasma Deck">Plasma Deck</option>
-          <option value="Erratic Deck">Erratic Deck</option>
+          <option value="Red Deck">红色牌组</option>
+          <option value="Blue Deck">蓝色牌组</option>
+          <option value="Yellow Deck">黄色牌组</option>
+          <option value="Green Deck">绿色牌组</option>
+          <option value="Black Deck">黑色牌组</option>
+          <option value="Magic Deck">魔法牌组</option>
+          <option value="Nebula Deck">星云牌组</option>
+          <option value="Ghost Deck">幽灵牌组</option>
+          <option value="Abandoned Deck">废弃牌组</option>
+          <option value="Checkered Deck">方格牌组</option>
+          <option value="Zodiac Deck">黄道牌组</option>
+          <option value="Painted Deck">彩绘牌组</option>
+          <option value="Anaglyph Deck">浮雕牌组</option>
+          <option value="Plasma Deck">等离子牌组</option>
+          <option value="Erratic Deck">古怪牌组</option>
           <!-- Add deck options here -->
         </select>
         <br>
-        <label for="stake">Stake:</label>
+        <label for="stake">难度:</label>
         <select id="stake" required>
-          <option value="White Stake">White Stake</option>
-          <option value="Red Stake">Red Stake</option>
-          <option value="Green Stake">Green Stake</option>
-          <option value="Black Stake">Black Stake</option>
-          <option value="Blue Stake">Blue Stake</option>
-          <option value="Purple Stake">Purple Stake</option>
-          <option value="Orange Stake">Orange Stake</option>
-          <option value="Gold Stake">Gold Stake</option>
+          <option value="White Stake">白注</option>
+          <option value="Red Stake">红注</option>
+          <option value="Green Stake">绿注</option>
+          <option value="Black Stake">黑注</option>
+          <option value="Blue Stake">蓝注</option>
+          <option value="Purple Stake">紫注</option>
+          <option value="Orange Stake">橙注</option>
+          <option value="Gold Stake">金注</option>
           <!-- Add stake options here -->
         </select>
         <br>
-        <label for="version">Version:</label>
+        <label for="version">游戏版本:</label>
         <select id="version" required>
           <option value="10106">1.0.1f</option>
           <option value="10103">1.0.1c</option>
@@ -270,22 +270,22 @@
           <!-- Add version options here -->
         </select>
         <br>
-        <button id="openCheckboxesBtn">Modify Unlocks</button>
+        <button id="openCheckboxesBtn">修改已解锁</button>
         <div id="checkboxesOverlay">
           <div id="checkboxesPopup">
-            <h2>Unlocked Items</h2>
+            <h2>已解锁项目</h2>
             <div id="checkboxesContainer" class="clearfix"></div>
-            <button id="submitBtn">Submit</button>
-            <button id="unlockBtn">Unlock All</button>
-            <button id="lockBtn">Lock All</button>
+            <button id="submitBtn">提交</button>
+            <button id="unlockBtn">全解锁</button>
+            <button id="lockBtn">全上锁</button>
           </div>
         </div>
         <br>
-        <button id="analyzeButton">Analyze</button>
-        <button id="copyButton">Copy Link</button>
+        <button id="analyzeButton">分析</button>
+        <button id="copyButton">复制链接</button>
       </div>
       <div class="output-section">
-        <h2>Output</h2>
+        <h2>输出</h2>
         <textarea id="outputBox" rows="16" readonly></textarea>
         <br>
         <button id="downloadButton" style="font-size: 1em">Download</button>
@@ -496,10 +496,10 @@
       // Copy the URL to the clipboard
       navigator.clipboard.writeText(url)
         .then(() => {
-          alert('Link copied to clipboard!');
+          alert('已复制链接');
         })
         .catch((err) => {
-          console.error('Failed to copy link: ', err);
+          console.error('未能复制链接: ', err);
         });
     }
 

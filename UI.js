@@ -702,11 +702,11 @@ function searchAndHighlight() {
     const searchInput = document.createElement('input');
     searchInput.type = 'text';
     searchInput.id = 'searchInput';
-    searchInput.placeholder = 'Enter search terms (comma-separated)';
+    searchInput.placeholder = '输入搜索词 (以逗号分隔)';
 
     const searchLabel = document.createElement('label');
     searchLabel.setAttribute('for', 'searchInput');
-    searchLabel.textContent = 'Press enter to search (comma separated values, min length 4 char)';
+    searchLabel.textContent = '输入内容并回车进行检索 (用逗号分隔, 单项至少4个字符)';
 
     const searchContainer = document.createElement('div');
     searchContainer.className = 'search-container';
@@ -734,18 +734,18 @@ function searchAndHighlight() {
     // Function to extract shop queues from the textarea content
     function extractShopQueues(text) {
         const shopQueues = [];
-        const regex = /==ANTE \d+==[\s\S]*?(?=(?:==ANTE \d+==|$))/g;
+        const regex = /==底注 \d+==[\s\S]*?(?=(?:==底注 \d+==|$))/g;
         const matches = text.match(regex);
 
         if (matches) {
             matches.forEach(match => {
-                const titleMatch = match.match(/==ANTE \d+==/);
+                const titleMatch = match.match(/==底注 \d+==/);
                 const title = titleMatch ? titleMatch[0] : 'Untitled';
                 const bossMatch = match.match(/Boss: (.+)/);
-                const voucherMatch = match.match(/Voucher: (.+)/);
-                const tagsMatch = match.match(/Tags: (.+)/);
-                const queueMatch = match.match(/Shop Queue:([\s\S]*?)(?=Packs:|$)/);
-                const packsMatch = match.match(/Packs:([\s\S]*?)(?=(?:==ANTE \d+==|$))/);
+                const voucherMatch = match.match(/优惠券: (.+)/);
+                const tagsMatch = match.match(/跳过标签: (.+)/);
+                const queueMatch = match.match(/Shop Queue:([\s\S]*?)(?=补充包:|$)/);
+                const packsMatch = match.match(/补充包:([\s\S]*?)(?=(?:==底注 \d+==|$))/);
 
                 const boss = bossMatch ? bossMatch[1].trim() : '';
                 const voucher = voucherMatch ? voucherMatch[1].trim() : '';
